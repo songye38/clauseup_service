@@ -4,6 +4,7 @@ import MainBtn from "@/components/Button/MainBtn";
 import RenegoBtnClient from "@/components/Button/RenegoBtnClient";
 import UploadActionBtn from "@/components/Button/UploadActionBtn";
 import RecentContractsItem from "@/components/RecentContractsItem";
+import ReportHeader from "@/components/ReportHeader";
 
 
 
@@ -20,11 +21,27 @@ export default function Home() {
       <UploadActionBtn label="사진 선택하기" type="photo" />
       <UploadActionBtn label="pdf 업로드하기" type="pdf" />
 
-      <RecentContractsItem
-        date="251222"
-        title="노트폴리오 UXUI 강의 계약서 내용이 길어지면.."
-        remainingCount={3}
-      />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 40, background: 'white' }}>
+        <div style={{ alignSelf: 'stretch', color: 'black', fontSize: 20, fontFamily: 'Pretendard', fontWeight: '600', wordWrap: 'break-word' }}>최근 검토한 계약서</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <RecentContractsItem
+            date="251222"
+            title="노트폴리오 UXUI 강의 계약서 내용이 길어지면.."
+            remainingCount={3}
+          />
+          <RecentContractsItem
+            date="251222"
+            title="노트폴리오 UXUI 강의 계약서 내용이 길어지면.."
+            remainingCount={3}
+          />
+          <RecentContractsItem
+            date="251222"
+            title="노트폴리오 UXUI 강의 계약서 내용이 길어지면.."
+            remainingCount={3}
+          />
+        </div>
+      </div>
+      <ReportHeader issueCount={10} />
     </div>
   );
 }
