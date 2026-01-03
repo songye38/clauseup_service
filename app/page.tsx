@@ -8,6 +8,8 @@ import ReportHeader from "@/components/ReportHeader";
 import ReportSummaryItem from "@/components/ReportSummaryItem";
 import { ReportSummaryType } from "@/types/reportSummary";
 import ReportIssueCard from "@/components/ReportIssueCard";
+import SubscribeInfo from "@/components/SubscribeInfo";
+import ContractsReviewBtn from "@/components/Button/ContractsReviewBtn";
 
 
 
@@ -42,7 +44,7 @@ export default function Home() {
       <UploadActionBtn label="사진 선택하기" type="photo" />
       <UploadActionBtn label="pdf 업로드하기" type="pdf" />
 
-      <div style={{ width : '100%',display: 'flex', flexDirection: 'column', gap: 12, marginTop: 40, background: 'white',padding:20,borderRadius:8 }}>
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 40, background: 'white', padding: 20, borderRadius: 8 }}>
         <div style={{ alignSelf: 'stretch', color: 'black', fontSize: 20, fontFamily: 'Pretendard', fontWeight: '600', wordWrap: 'break-word' }}>최근 검토한 계약서</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <RecentContractsItem
@@ -72,8 +74,8 @@ export default function Home() {
         isLocked={isFreeUser && LOCKED_TYPES_FOR_FREE.includes('ADJUST')}
       />
 
-{/* 여기서 너비를 우선 80%를 잡아둠 */}
-      <div style={{ width : '100%',display: 'flex', flexDirection: 'column', gap: 12, marginTop: 20 }}>
+      {/* 여기서 너비를 우선 80%를 잡아둠 */}
+      <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 20 }}>
         <ReportIssueCard
           issue={{
             id: 'issue-1',
@@ -93,8 +95,15 @@ export default function Home() {
             description:
               '현재 계약서에는 수정 횟수나 범위에 대한 기준이 없어\n추가 수정이 반복될 가능성이 있습니다.',
           }}
+        />
+
+        <SubscribeInfo
+          remainingCount={2}
+          purchaseHref="/purchase"
+          subscribeHref="/subscribe"
         />
       </div>
+      <ContractsReviewBtn href="/contracts/review" />
 
     </div>
   );
