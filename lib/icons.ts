@@ -10,6 +10,7 @@ export const icons = {
   leftCircle: '/icons/arrow-circle-right(24).png',
   back: '/icons/chevron-left(36).png',
   right: '/icons/chevron-down(20).png',
+  right16 : '/icons/chevron-down(16).png',
   certified: '/icons/check-verified(12).png',
 
 } as const
